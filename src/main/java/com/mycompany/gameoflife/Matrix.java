@@ -60,7 +60,7 @@ public class Matrix{
                 for(int j = 0; j<2; j++){             
                     //randomNum = 0 + (int)(Math.random()*msize);
                     randomNum = Math.abs(rand.nextInt(msize)+1);
-                    System.out.println(""+ randomNum);
+                   
                     
                     output += randomNum + ":";
                     
@@ -68,7 +68,6 @@ public class Matrix{
                 
             }
             output = output.substring(0,pop-2);
-            System.out.println(output);
             processString(output);
             
             
