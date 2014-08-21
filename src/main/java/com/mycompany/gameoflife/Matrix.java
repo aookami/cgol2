@@ -28,7 +28,7 @@ public class Matrix{
             this.matb = new int[size+2][size+2];
         }
         public void LifeCo(int x, int y){
-            if(x > 0 && y > 0 && x<size && y < size){
+            if(x > 0 && y > 0 && x<=size && y <=size){
                 mata[x][y] = 1;
                 matb[x][y] = 1;
             }
@@ -59,14 +59,16 @@ public class Matrix{
             for(int i = 0; i<pop; i++){
                 for(int j = 0; j<2; j++){             
                     //randomNum = 0 + (int)(Math.random()*msize);
-                    randomNum = rand.nextInt((msize))+1;
+                    randomNum = Math.abs(rand.nextInt(msize)+1);
+                    System.out.println(""+ randomNum);
                     
                     output += randomNum + ":";
                     
                 }
                 
             }
-            output = output.substring(0,pop-1);
+            output = output.substring(0,pop-2);
+            System.out.println(output);
             processString(output);
             
             
