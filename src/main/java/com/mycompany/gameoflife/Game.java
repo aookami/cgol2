@@ -12,10 +12,12 @@ package com.mycompany.gameoflife;
  * @author Bruno
  */
 public class Game{
+    int gamepop;
         
 
         public void run(Matrix state){
             String output;
+ 
             int prox;
                      
                 for(int i = 1; i<=state.size;i++){
@@ -32,16 +34,21 @@ public class Game{
                         if(state.matb[i][j] == 1){
                             if(prox < 2 || prox > 3)
                                 state.mata[i][j] = 0;
+                            
                         }else{
-                            if(prox==3)
+                            if(prox==3 && (i!=0 && i!=state.size && j!=0&&j!=state.size))
                                 state.mata[i][j] = 1;
+                                
                         }
                      //prox = 0;            
                     }
                 }
+                gamepop = 0;
                 for(int i=0; i<state.size; i++)
                     for(int j=0; j<state.size; j++){
-                        state.matb[i][j]=state.mata[i][j];                      
+                        state.matb[i][j]=state.mata[i][j];
+                        if(state.matb[i][j] == 1)
+                            gamepop++;
                     }
                 
 

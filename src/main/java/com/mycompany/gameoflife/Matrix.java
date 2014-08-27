@@ -7,7 +7,6 @@
 package com.mycompany.gameoflife;
 
 import static java.lang.Integer.parseInt;
-import static java.lang.Integer.parseInt;
 import java.util.Random;
 
 /**
@@ -88,4 +87,5 @@ public class Matrix{
           
                 return output;
             }  
+        
     }
