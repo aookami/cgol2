@@ -8,9 +8,9 @@ package com.mycompany.gameoflife;
 
 
 /**
- *
- * @author Bruno
+ ** @author Bruno
  */
+ 
 public class Game{
     int gamepop;
         
@@ -36,7 +36,7 @@ public class Game{
                                 state.mata[i][j] = 0;
                             
                         }else{
-                            if(prox==3 && (i!=0 && i!=state.size && j!=0&&j!=state.size))
+                            if(prox==3 && (i!=0 && i!=state.size+1 && j!=0 &&j!=state.size+1))
                                 state.mata[i][j] = 1;
                                 
                         }
@@ -44,8 +44,8 @@ public class Game{
                     }
                 }
                 gamepop = 0;
-                for(int i=0; i<state.size; i++)
-                    for(int j=0; j<state.size; j++){
+                for(int i=0; i<state.size+1; i++)
+                    for(int j=0; j<state.size+1; j++){
                         state.matb[i][j]=state.mata[i][j];
                         if(state.matb[i][j] == 1)
                             gamepop++;
